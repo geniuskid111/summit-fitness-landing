@@ -19,7 +19,7 @@ const promises = [
 
 export function HeroSection() {
   const { reduce } = useReveal()
-  const headline = 'Transform Your Body in 90 Days'
+  const headline = 'Get Visibly Leaner in 90 Days'
   const words = headline.split(' ')
 
   const wordContainer = {
@@ -55,35 +55,35 @@ export function HeroSection() {
           <div className="order-2 lg:order-1">
             {/* Badge */}
             <motion.div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface text-muted text-sm font-medium mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface text-ink-muted text-sm font-medium mb-6"
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, ease: EASE, delay: reduce ? 0 : 0.05 }}
             >
-              <span className="h-2 w-2 rounded-full bg-accent animate-pulse" aria-hidden="true" />
+              <span className="h-2 w-2 rounded-full bg-ink-muted animate-pulse" aria-hidden="true" />
               Online Personal Training
             </motion.div>
 
             <motion.h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight tracking-tight text-balance mb-6"
+              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-ink leading-tight tracking-tight text-balance mb-6"
               variants={wordContainer}
               initial="hidden"
               animate="visible"
             >
               {words.map((w, i) => (
-                <motion.span key={i} variants={word} className="mr-[0.25em] inline-block">
-                  {w}
+                <motion.span key={i} variants={word} className="inline-block">
+                  {w}{'\u00A0'}
                 </motion.span>
               ))}
             </motion.h1>
 
             <motion.p
-              className="text-lg text-muted leading-relaxed mb-8 max-w-lg"
+              className="text-lg text-ink-muted leading-relaxed mb-8 max-w-lg"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: EASE, delay: reduce ? 0 : 0.5 }}
             >
-              Personalized online coaching that fits your schedule. No gym required.
+              Coached 1-on-1, built around your schedule. No gym required.
             </motion.p>
 
             {/* Promise list */}
@@ -94,7 +94,7 @@ export function HeroSection() {
               transition={{ duration: 0.5, ease: EASE, delay: reduce ? 0 : 0.58 }}
             >
               {promises.map((item) => (
-                <li key={item} className="flex items-center gap-3 text-muted">
+                <li key={item} className="flex items-center gap-3 text-ink-muted">
                   <CheckCircle className="w-5 h-5 text-success flex-shrink-0" aria-hidden="true" />
                   <span>{item}</span>
                 </li>
@@ -110,7 +110,7 @@ export function HeroSection() {
             >
               <motion.a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-cta px-8 py-4 font-bold text-cta-text transition hover:bg-cta-hover"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-volt px-8 py-4 font-bold text-cta-text transition hover:bg-volt-hover"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -119,7 +119,7 @@ export function HeroSection() {
               </motion.a>
               <motion.a
                 href="#services"
-                className="inline-flex items-center justify-center rounded-xl border border-border px-8 py-4 font-bold text-foreground transition hover:border-cta hover:bg-surface"
+                className="inline-flex items-center justify-center rounded-xl border border-base-border px-8 py-4 font-bold text-ink transition hover:border-volt hover:bg-base-surface"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -136,7 +136,7 @@ export function HeroSection() {
             transition={{ duration: 0.7, ease: EASE, delay: reduce ? 0 : 0.2 }}
           >
             <div className="relative w-full max-w-md lg:max-w-none">
-              <div className="relative rounded-3xl overflow-hidden border border-border shadow-2xl aspect-[4/5]">
+              <div className="relative rounded-3xl overflow-hidden border border-base-border shadow-2xl aspect-[4/5]">
                 <Image
                   src="/hero-fitness.png"
                   alt="Athletic person training — Summit Fitness Coaching"
@@ -156,25 +156,25 @@ export function HeroSection() {
               </div>
 
               {/* Floating stat card */}
-              <div className="absolute -bottom-5 -left-5 sm:bottom-6 sm:left-6 bg-surface border border-border rounded-xl px-4 py-3 shadow-xl backdrop-blur-sm">
-                <p className="text-foreground font-bold text-xl">4.9 / 5.0</p>
-                <p className="text-muted text-xs">Based on 200+ reviews</p>
+              <div className="absolute -bottom-5 -left-5 sm:bottom-6 sm:left-6 bg-base-surface border border-base-border rounded-xl px-4 py-3 shadow-xl backdrop-blur-sm">
+                <p className="text-ink font-bold text-xl">4.9★</p>
+                <p className="text-ink-muted text-xs">Based on 500+ clients</p>
               </div>
             </div>
           </motion.div>
         </div>
 
-        {/* Stats row */}
+        {/* Stats row — only instance on the page */}
         <motion.div
-          className="mt-16 pt-10 border-t border-border grid grid-cols-3 gap-6"
+          className="mt-16 pt-10 border-t border-base-border grid grid-cols-3 gap-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: EASE, delay: reduce ? 0 : 0.75 }}
         >
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
-              <p className="text-3xl sm:text-4xl font-extrabold text-foreground">{stat.value}</p>
-              <p className="text-muted text-sm mt-1">{stat.label}</p>
+              <p className="text-3xl sm:text-4xl font-extrabold text-ink">{stat.value}</p>
+              <p className="text-ink-muted text-sm mt-1">{stat.label}</p>
             </div>
           ))}
         </motion.div>

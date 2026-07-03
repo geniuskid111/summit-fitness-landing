@@ -41,7 +41,7 @@ export function CtaSection() {
       >
         <motion.span
           variants={item}
-          className="inline-block px-4 py-1.5 rounded-full border border-border bg-surface text-muted text-sm font-semibold mb-6"
+          className="inline-block px-4 py-1.5 rounded-full border border-base-border bg-base-surface text-ink-muted text-sm font-semibold mb-6"
         >
           Start Today
         </motion.span>
@@ -87,7 +87,7 @@ export function CtaSection() {
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Alex Johnson"
                   required
-                  className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-border text-foreground placeholder:text-muted/50 focus:outline-none focus:border-cta focus:ring-1 focus:ring-cta/30 transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-base-border text-ink placeholder:text-ink-muted/50 focus:outline-none focus:border-base-border focus:ring-1 focus:ring-ink-muted/30 transition-colors"
                 />
               </div>
 
@@ -104,7 +104,7 @@ export function CtaSection() {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="alex@example.com"
                     required
-                    className="w-full pl-11 pr-4 py-3 rounded-xl bg-surface-2 border border-border text-foreground placeholder:text-muted/50 focus:outline-none focus:border-cta focus:ring-1 focus:ring-cta/30 transition-colors"
+                    className="w-full pl-11 pr-4 py-3 rounded-xl bg-surface-2 border border-base-border text-ink placeholder:text-ink-muted/50 focus:outline-none focus:border-base-border focus:ring-1 focus:ring-ink-muted/30 transition-colors"
                   />
                 </div>
               </div>
@@ -115,7 +115,7 @@ export function CtaSection() {
                 </label>
                 <select
                   id="goal"
-                  className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-border text-muted focus:outline-none focus:border-cta focus:ring-1 focus:ring-cta/30 transition-colors appearance-none"
+                  className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-base-border text-ink-muted focus:outline-none focus:border-base-border focus:ring-1 focus:ring-ink-muted/30 transition-colors appearance-none"
                 >
                   <option value="">Select your goal...</option>
                   <option value="weight-loss">Weight Loss</option>
@@ -132,7 +132,7 @@ export function CtaSection() {
               disabled={loading || !email || !name}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-cta px-8 py-4 font-bold text-cta-text hover:bg-cta-hover disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-volt px-8 py-4 font-bold text-cta-text hover:bg-volt-hover disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
             >
               {loading ? (
                 <>
@@ -147,7 +147,10 @@ export function CtaSection() {
               )}
             </motion.button>
 
-            <p className="mt-4 text-muted text-xs text-center">
+            <p className="mt-3 text-ink-muted text-sm text-center font-medium">
+              We reply within 24 hours.
+            </p>
+            <p className="mt-2 text-ink-muted text-xs text-center">
               No spam, ever. Your information is kept 100% private.
             </p>
           </motion.form>

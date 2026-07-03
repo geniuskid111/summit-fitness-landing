@@ -22,6 +22,21 @@ const config: Config = {
 
         accent: 'var(--accent)',
         success: 'var(--success)',
+
+        /* Aliases (base / ink / volt) */
+        base: {
+          DEFAULT: 'var(--background)',
+          surface: 'var(--surface)',
+          border: 'var(--border)',
+        },
+        ink: {
+          DEFAULT: 'var(--foreground)',
+          muted: 'var(--muted)',
+        },
+        volt: {
+          DEFAULT: 'var(--cta)',
+          hover: 'var(--cta-hover)',
+        },
       },
     },
   },

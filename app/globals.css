@@ -23,6 +23,15 @@
   --color-accent: var(--accent);
   --color-success: var(--success);
 
+  /* Aliases: base / ink / volt */
+  --color-base: var(--background);
+  --color-base-surface: var(--surface);
+  --color-base-border: var(--border);
+  --color-ink: var(--foreground);
+  --color-ink-muted: var(--muted);
+  --color-volt: var(--cta);
+  --color-volt-hover: var(--cta-hover);
+
   /* shadcn compatibility */
   --color-card: var(--surface);
   --color-card-foreground: var(--foreground);

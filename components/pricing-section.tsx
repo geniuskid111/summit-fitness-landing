@@ -18,7 +18,7 @@ const plans = [
       'Progress tracking dashboard',
       'Email support',
     ],
-    cta: 'Get Started',
+    cta: 'Book a Call About Starter',
   },
   {
     name: 'Pro',
@@ -34,7 +34,7 @@ const plans = [
       'Priority support (24h response)',
       'Monthly body composition analysis',
     ],
-    cta: 'Start Pro — Most Popular',
+    cta: 'Book a Call About Pro',
   },
   {
     name: 'Elite',
@@ -51,7 +51,7 @@ const plans = [
       'Custom travel & hotel workouts',
       'Quarterly in-person session (if local)',
     ],
-    cta: 'Go Elite',
+    cta: 'Book a Call About Elite',
   },
 ]
 
@@ -59,17 +59,17 @@ export function PricingSection() {
   const { container, item } = useReveal()
 
   return (
-    <section id="pricing" className="py-20 lg:py-32 bg-background">
+    <section id="pricing" className="py-20 lg:py-32 bg-base">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full border border-border bg-surface text-muted text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full border border-base-border bg-base-surface text-ink-muted text-sm font-semibold mb-4">
             Transparent Pricing
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground text-balance mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink text-balance mb-4">
             Choose Your Path with Summit
           </h2>
-          <p className="text-muted text-lg max-w-xl mx-auto leading-relaxed">
+          <p className="text-ink-muted text-lg max-w-xl mx-auto leading-relaxed">
             No hidden fees. Cancel anytime. All plans include a 7-day free trial so you can experience real coaching with zero risk.
           </p>
         </div>
@@ -90,14 +90,14 @@ export function PricingSection() {
               transition={{ type: 'spring', stiffness: 300, damping: 22 }}
               className={`relative rounded-2xl border flex flex-col transition-all duration-300 ${
                 plan.popular
-                  ? 'border-cta/40 bg-surface scale-[1.02]'
-                  : 'border-border bg-surface'
+                  ? 'order-first md:order-none border-base-border bg-base-surface scale-[1.02]'
+                  : 'border-base-border bg-base-surface'
               }`}
             >
-              {/* Popular badge */}
+              {/* Popular badge — neutral, not volt */}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-cta text-cta-text text-xs font-bold shadow-lg">
+                  <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-base-border bg-base-surface text-ink text-xs font-bold shadow-lg">
                     <Zap className="w-3.5 h-3.5" aria-hidden="true" />
                     Most Popular
                   </span>
@@ -105,20 +105,17 @@ export function PricingSection() {
               )}
 
               <div className="p-8 flex flex-col flex-1">
-                {/* Plan header */}
                 <div className="mb-6">
-                  <h3 className="text-xl font-bold text-foreground mb-1">{plan.name}</h3>
-                  <p className="text-muted text-sm">{plan.tagline}</p>
+                  <h3 className="text-xl font-bold text-ink mb-1">{plan.name}</h3>
+                  <p className="text-ink-muted text-sm">{plan.tagline}</p>
                 </div>
 
-                {/* Price */}
                 <div className="flex items-end gap-1 mb-8">
-                  <span className="text-muted text-lg font-medium">$</span>
-                  <span className="text-5xl font-extrabold text-foreground leading-none">{plan.price}</span>
-                  <span className="text-muted text-sm font-medium mb-1">/mo</span>
+                  <span className="text-ink-muted text-lg font-medium">$</span>
+                  <span className="text-5xl font-extrabold text-ink leading-none">{plan.price}</span>
+                  <span className="text-ink-muted text-sm font-medium mb-1">/mo</span>
                 </div>
 
-                {/* Features */}
                 <ul className="space-y-3 mb-8 flex-1">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
@@ -126,21 +123,16 @@ export function PricingSection() {
                         className="w-4 h-4 mt-0.5 flex-shrink-0 text-success"
                         aria-hidden="true"
                       />
-                      <span className="text-muted text-sm">{feature}</span>
+                      <span className="text-ink-muted text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
-                {/* CTA */}
                 <motion.a
                   href="#contact"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className={`w-full inline-flex items-center justify-center px-6 py-3.5 rounded-xl font-bold text-sm transition-colors duration-200 ${
-                    plan.popular
-                      ? 'bg-cta text-cta-text hover:bg-cta-hover'
-                      : 'border border-border text-foreground hover:border-cta hover:bg-surface'
-                  }`}
+                  className="w-full inline-flex items-center justify-center bg-volt text-cta-text hover:bg-volt-hover rounded-full py-3 font-semibold transition-colors duration-200"
                 >
                   {plan.cta}
                 </motion.a>
@@ -149,11 +141,10 @@ export function PricingSection() {
           ))}
         </motion.div>
 
-        {/* Guarantee */}
-        <p className="mt-10 text-center text-muted text-sm">
+        <p className="mt-10 text-center text-ink-muted text-sm">
           All plans include a{' '}
-          <span className="text-foreground font-semibold">7-day free trial</span> and a{' '}
-          <span className="text-foreground font-semibold">30-day money-back guarantee</span>. No questions asked.
+          <span className="text-ink font-semibold">7-day free trial</span> and a{' '}
+          <span className="text-ink font-semibold">30-day money-back guarantee</span>. No questions asked.
         </p>
       </div>
     </section>
